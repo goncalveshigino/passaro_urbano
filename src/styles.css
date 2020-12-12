@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+h5 {
+    color:#999
+}
+
+h4 {
+    color:#555
+}
+
+h3 {
+    color: #555
+}
+
+.card img {
+    height: 200px;
+}
+
+.secao {
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+
+.preco {
+    color: #f60;
+    font-weight: bold;
+    font-size: 20px
+}
