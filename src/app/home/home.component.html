@@ -7,11 +7,11 @@
 
     <hr />
 
-    <div class="row" style="margin-bottom: 60px;">
+    <div class="row" style="margin-bottom: 50px;">
         <div class="col-sm-4" *ngFor="let oferta of ofertas">
             <div class="card">
                 <img class="card-img-top" [src]="oferta.imagens[0].url">
-                <div class="card-block" style="margin:20px">
+                <div class="card-block" style="margin:10px">
                     <h4 class="card-title">{{ oferta.titulo }}</h4>
                     <p class="card-text">{{ oferta.descricao_oferta }}</p>
                     <p class="preco">{{ oferta.valor }}</p>
