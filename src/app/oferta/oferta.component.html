@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="oferta" style="margin-bottom: 40px;" *ngIf="oferta !== undefined">
+
+        <div class="row">
+            <div class="col">
+                <h4>{{oferta.descricao_oferta}}</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="img_capa">
+                    <img [src]="oferta.imagens[0].url" />
+                </div>
+
+                <div class="thumbnails">
+                    <img *ngFor="let imagem of oferta.imagens " [src]="imagem.url" />
+
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col text-center">
+                        <p>Por apenas</p>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <h1>{{oferta.valor}}</h1>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="button" class="btn btn-warning btn-lg">Adicionar ao carrinho</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <br>
+</div>
