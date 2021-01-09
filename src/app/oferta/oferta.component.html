@@ -44,5 +44,18 @@
         </div>
 
     </div>
-    <br>
-</div>
+    <div class="row" style="margin-bottom: 25px; margin-bottom: 120px;">
+        <div class="col">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" routerLink="como-usar" role="tab " aria-selected="true">Como usar</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" data-toggle="tab" routerLink="onde-fica" role="tab">Onde fica</a>
+                </li>
+            </ul>
+            <div class="tab-content ">
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+    </div>
