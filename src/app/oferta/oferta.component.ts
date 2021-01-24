@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Oferta } from '../shared/oferta.model'
 import { OfertasService} from '../ofertas.service'
+
+import 'rxjs/Rx'
 
 @Component({
   selector: 'app-oferta',
@@ -9,7 +11,9 @@ import { OfertasService} from '../ofertas.service'
   styleUrls: ['./oferta.component.css'],
   providers: [OfertasService]
 })
-export class OfertaComponent implements OnInit {
+export class OfertaComponent implements OnInit,OnDestroy {
+
+
 
   public oferta: Oferta;
   
@@ -22,6 +26,11 @@ export class OfertaComponent implements OnInit {
     .then((oferta: Oferta) => {
       this.oferta = oferta
     })
+
+  }
+
+  ngOnDestroy(){
+  
   }
 
 }

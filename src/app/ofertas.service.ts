@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
 import {URL_API} from './app.api'
 
 import 'rxjs/add/operator/toPromise'
+import 'rxjs/add/operator/map'
+import 'rxjs/add/operator/retry'
+import {Observable} from 'rxjs/Observable'
 
 
 @Injectable()
@@ -48,5 +51,12 @@ public getOndeFicaPorId(id: number): Promise<string> {
     return resposta.json()[0].descricao
   })
 }
+
+  //Retornando um observable
+  public pesquisaOfertas(termo: string): Observable<Oferta[]>{
+    return this.http.get(`${URL_API}/ofertas?descricao_oferta_like=${termo}`)
+    .retry(5)
+    .map((resposta: any) => resposta.json())
+  }
 
 }
