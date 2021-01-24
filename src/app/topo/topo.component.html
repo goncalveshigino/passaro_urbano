@@ -1,10 +1,19 @@
 <div class="fixed-top">
     <nav class="navbar navbar-light bg-light">
         <div class="container">
-            <a routerLink="" class="navbar-brand">
-                <img src="/assets/logo.png" />
-            </a>
-            <a a href="# "><img src="/assets/carrinho.png" /></a>
+            <div class="row">
+                <div class="col-md-4">
+                    <a routerLink="" class="navbar-brand">
+                        <img src="/assets/logo.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control" placeholder="Pesquise por ofertas.." #termoDaPesquisa (keyup)="pesquisa(termoDaPesquisa.value)" />
+            </div>
+            <div class="col-md-2">
+                <a a href="# "><img src="/assets/carrinho.png" /></a>
+            </div>
         </div>
     </nav>
 
