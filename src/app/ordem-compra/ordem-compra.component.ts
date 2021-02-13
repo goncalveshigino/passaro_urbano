@@ -12,6 +12,13 @@ export class OrdemCompraComponent implements OnInit {
   public complement: string = '';
   public formPagyment: string = '';
 
+
+  // Controllers de validacao dos campos
+  public addressValid: boolean;
+  public numberValid: boolean;
+  public complementValid: boolean;
+  public formPagymentValid: boolean;
+
   constructor() { }
 
   ngOnInit() {
@@ -19,22 +26,40 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaEndereco(address: string): void {
     this.address = address
-    console.log(this.address)
+    
+    if(this.address.length > 5){
+        this.addressValid = true
+    }else {
+      this.addressValid = false
+    }
   }
 
   public atualizaNumero(number: string): void {
     this.number = number
-    console.log(this.number)
+
+    if(this.number.length >0){
+      this.numberValid = true
+    }else{
+      this.numberValid = false
+    }
   }
 
   public atualizaComplemento(complement: string): void {
     this.complement = complement
-    console.log(this.complement)
+    
+    if(this.complement.length>0){
+      this.complementValid = true
+    }
   }
 
   public atualizaFormPayment(formPagyment: string): void {
     this.formPagyment = formPagyment
-    console.log(this.formPagyment)
+    
+    if(this.formPagyment.length>0){
+      this.formPagymentValid = true
+    }else {
+      this.formPagymentValid = false
+    }
   }
 
 }
