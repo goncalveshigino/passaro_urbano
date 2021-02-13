@@ -19,6 +19,12 @@ export class OrdemCompraComponent implements OnInit {
   public complementValid: boolean;
   public formPagymentValid: boolean;
 
+  //estados primitivos dos campos (pristine)
+  public addressEstadoPrimitivo: boolean = true;
+  public numberEstadoPrimivito: boolean = true;
+  public complementEstadoPrimitivo: boolean = true;
+  public formPagymentEstadoPrimitivo: boolean = true;
+
   constructor() { }
 
   ngOnInit() {
@@ -26,8 +32,10 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaEndereco(address: string): void {
     this.address = address
+
+    this.addressEstadoPrimitivo = false
     
-    if(this.address.length > 5){
+    if(this.address.length > 3){
         this.addressValid = true
     }else {
       this.addressValid = false
@@ -36,6 +44,8 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaNumero(number: string): void {
     this.number = number
+
+    this.numberEstadoPrimivito = false
 
     if(this.number.length >0){
       this.numberValid = true
@@ -46,6 +56,8 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaComplemento(complement: string): void {
     this.complement = complement
+
+    this.complementEstadoPrimitivo = false
     
     if(this.complement.length>0){
       this.complementValid = true
@@ -54,8 +66,10 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaFormPayment(formPagyment: string): void {
     this.formPagyment = formPagyment
+
+    this.formPagymentEstadoPrimitivo = false
     
-    if(this.formPagyment.length>0){
+    if(this.formPagyment.length >0){
       this.formPagymentValid = true
     }else {
       this.formPagymentValid = false
