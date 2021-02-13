@@ -65,18 +65,18 @@
             <div class="form-row">
 
                 <div class="form-group col-md-6">
-                    <input type="text" class="form-control {{ addressValid ? 'is-valid':'is-invalid'}}" placeholder="Endereço" autocomplete="off" minlength="5" required [value]="address" #inputEndereco (input)="atualizaEndereco(inputEndereco.value)">
+                    <input type="text" class="form-control {{ addressEstadoPrimitivo ? '': (addressValid ? 'is-valid':'is-invalid') }}" placeholder="Endereço" autocomplete="off" minlength="5" required [value]="address" #inputEndereco (input)="atualizaEndereco(inputEndereco.value)">
                     <div class="invalid-feedback">Endereço inválido</div>
                 </div>
 
                 <div class="form-group col-md-2">
-                    <input type="text" class="form-control {{ numberValid ? 'is-valid':'is-invalid'}}" placeholder="Número " autocomplete="off " minlength="1 " required [value]="number " #inputNumero (input)="atualizaNumero(inputNumero.value) ">
+                    <input type="text" class="form-control {{ numberEstadoPrimivito ? '': (numberValid ? 'is-valid':'is-invalid') }}" placeholder="Número " autocomplete="off " minlength="1 " required [value]="number " #inputNumero (input)="atualizaNumero(inputNumero.value) ">
 
                     <small class="form-text text-muted ">Ok</small>
                 </div>
 
                 <div class="form-group col-md-4 ">
-                    <input type="text " class="form-control {{ complementValid ? 'is-valid':''}}" placeholder="Complemento " autocomplete="off " [value]="complement " #inputComplemento (input)="atualizaComplemento(inputComplemento.value) ">
+                    <input type="text " class="form-control {{ complementEstadoPrimitivo ? '': (complementValid ? 'is-valid':'') }}" placeholder="Complemento " autocomplete="off " [value]="complement " #inputComplemento (input)="atualizaComplemento(inputComplemento.value) ">
                 </div>
 
             </div>
@@ -88,10 +88,10 @@
             <div class="form-row ">
 
                 <div class="form-group col-md-3 ">
-                    <select class="form-control {{ formPagymentValid ? 'is-valid':''}}" #selectedFormPayment (change)="atualizaFormPayment(selectedFormPayment.value) ">
-            <option value=" ">Selecione uma opção</option>
-            <option value="dinheiro " selected="{{ formPagyment=='dinheiro' ? 'selected': ''}} ">Dinheiro</option>
-            <option value="debito " selected="{{formPagyment=='debito' ? 'selected': ''}} ">Débito</option>
+                    <select class="form-control {{ formPagymentEstadoPrimitivo ? '': (formPagymentValid ? 'is-valid':'is-invalid') }}" #selectedFormPayment (change)="atualizaFormPayment(selectedFormPayment.value) ">
+            <option value="">Selecione uma opção</option>
+            <option value="dinheiro" selected="{{ formPagyment=='dinheiro' ? 'selected': ''}} ">Dinheiro</option>
+            <option value="debito" selected="{{ formPagyment=='debito' ? 'selected': ''}} ">Débito</option>
           </select>
 
                     <div class="invalid-feedback ">Selecione uma forma de pagamento</div>
