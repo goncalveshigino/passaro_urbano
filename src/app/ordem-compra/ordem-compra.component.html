@@ -78,7 +78,7 @@
 
 
                 <div class="form-group col-md-2">
-                    <input type="text" class="form-control {{ numberEstadoPrimivito ? '': (numberValid ? 'is-valid':'is-invalid') }}" placeholder="Número " autocomplete="off " minlength="1 " required [value]="number " #inputNumero (input)="atualizaNumero(inputNumero.value) ">
+                    <input type="text" class="form-control {{ numberEstadoPrimivito ? '': (numberValid ? 'is-valid':'is-invalid') }}" placeholder="Número " autocomplete="off " minlength="1 " required [value]="number" #inputNumero (input)="atualizaNumero(inputNumero.value) ">
                     <div *ngIf="numberEstadoPrimivito == false">
                         <div *ngIf="numberValid; else msgNumberInvalid">
                             <small class="form-text text-success">Ok</small>
@@ -92,14 +92,14 @@
 
 
                 <div class="form-group col-md-4 ">
-                    <input type="text " class="form-control {{ complementEstadoPrimitivo ? '': (complementValid ? 'is-valid':'') }}" placeholder="Complemento " autocomplete="off " [value]="complement " #inputComplemento (input)="atualizaComplemento(inputComplemento.value)">
-
+                    <input type="text" class="form-control {{ complementEstadoPrimitivo ? '': (complementValid ? 'is-valid':'') }}" placeholder="Complemento" autocomplete="off" [value]="complement" #inputComplemento (input)="atualizaComplemento(inputComplemento.value) ">
 
                     <div *ngIf="complementEstadoPrimitivo == false">
                         <div *ngIf="complementValid">
                             <small class="form-text text-success">Ok</small>
                         </div>
                     </div>
+
                 </div>
 
 
@@ -112,7 +112,7 @@
             <div class="form-row ">
 
                 <div class="form-group col-md-3 ">
-                    <select class="form-control {{ formPagymentEstadoPrimitivo ? '': (formPagymentValid ? 'is-valid':'is-invalid') }}" #selectedFormPayment (change)="atualizaFormPayment(selectedFormPayment.value) ">
+                    <select class="form-control {{ formPagymentEstadoPrimitivo ? '': (formPagymentValid ? 'is-valid':'is-invalid') }}" #selectedFormPayment (change)="atualizaFormPayment(selectedFormPayment.value)">
                 
             <option value="">Selecione uma opção</option>
             <option value="dinheiro" selected="{{ formPagyment=='dinheiro' ? 'selected': ''}} ">Dinheiro</option>
@@ -132,7 +132,7 @@
             </div>
 
             <hr />
-            <button type="submit " class="btn btn-primary btn-lg ">Cofirmar compra</button>
+            <button type="submit" class="btn btn-primary btn-lg" [disabled]="formEstado">Cofirmar compra</button>
         </form>
     </div>
 </div>
