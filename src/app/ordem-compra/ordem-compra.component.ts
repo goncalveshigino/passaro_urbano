@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { OrdemCompraService } from '../ordem-compra.services'
 
 @Component({
   selector: 'app-ordem-compra',
   templateUrl: './ordem-compra.component.html',
-  styleUrls: ['./ordem-compra.component.css']
+  styleUrls: ['./ordem-compra.component.css'],
+  providers: [ OrdemCompraService ]
 })
 export class OrdemCompraComponent implements OnInit {
 
@@ -25,9 +27,17 @@ export class OrdemCompraComponent implements OnInit {
   public complementEstadoPrimitivo: boolean = true;
   public formPagymentEstadoPrimitivo: boolean = true;
 
-  constructor() { }
+  //Controllar botao que confirma compra
+  public formEstado: string = 'disabled';
+
+  constructor( private ordemCompraService: OrdemCompraService) { 
+
+  }
 
   ngOnInit() {
+
+   this.ordemCompraService.efetivarCompra();
+   
   }
 
   public atualizaEndereco(address: string): void {
@@ -40,6 +50,8 @@ export class OrdemCompraComponent implements OnInit {
     }else {
       this.addressValid = false
     }
+
+    this.habilitaForm();
   }
 
   public atualizaNumero(number: string): void {
@@ -52,6 +64,8 @@ export class OrdemCompraComponent implements OnInit {
     }else{
       this.numberValid = false
     }
+
+    this.habilitaForm();
   }
 
   public atualizaComplemento(complement: string): void {
@@ -61,7 +75,11 @@ export class OrdemCompraComponent implements OnInit {
     
     if(this.complement.length>0){
       this.complementValid = true
+    }else {
+      this.complementValid = false
     }
+
+    this.habilitaForm();
   }
 
   public atualizaFormPayment(formPagyment: string): void {
@@ -69,11 +87,22 @@ export class OrdemCompraComponent implements OnInit {
 
     this.formPagymentEstadoPrimitivo = false
     
-    if(this.formPagyment.length >0){
+    if(this.formPagyment.length > 0){
       this.formPagymentValid = true
     }else {
       this.formPagymentValid = false
     }
+
+    this.habilitaForm();
+  }
+
+  public habilitaForm(): void{
+      if( this.addressValid === true && this.numberValid === true && this.formPagymentValid ===true){
+
+        this.formEstado = '';
+      }else{
+        this.formEstado = 'disabled';
+      }
   }
 
 }

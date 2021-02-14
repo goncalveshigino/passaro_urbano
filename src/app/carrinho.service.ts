@@ -1,5 +1,5 @@
 
-export default class CarrinhoServicr {
+export default class CarrinhoService {
 
 }
 
