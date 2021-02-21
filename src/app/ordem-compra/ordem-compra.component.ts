@@ -22,6 +22,17 @@ export class OrdemCompraComponent implements OnInit {
   }
 
   public confirmarCompra(): void {
-    console.log(this.form)
+
+    let pedido: Pedido = new Pedido(
+      this.form.value.address,
+      this.form.value.number,
+      this.form.value.complement,
+      this.form.value.formPagyment
+    );
+
+   this.ordemCompraService.efetivarCompra(pedido)
+   .subscribe((idPedido: number) => {
+       console.log('Pedido cadastrado com sucesso! Id do Pedido: ' + idPedido)
+   })
   }
 }
