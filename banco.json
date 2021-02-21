@@ -194,32 +194,9 @@
       "id": 1
     },
     {
-      "address": "agag",
-      "number": "1",
-      "complement": "as",
-      "formPagyment": "debito",
+      "address": "Rua da Catolica",
+      "complement": "Casa Branca",
       "id": 2
-    },
-    {
-      "address": "qqqqq",
-      "number": "qq",
-      "complement": "qqq",
-      "formPagyment": "dinheiro",
-      "id": 3
-    },
-    {
-      "address": "sgsgsg",
-      "number": "1",
-      "complement": "xxhxxh",
-      "formPagyment": "dinheiro",
-      "id": 4
-    },
-    {
-      "address": "Rua Axix",
-      "number": "12",
-      "complement": "sjsjsj",
-      "formPagyment": "debito",
-      "id": 5
     }
   ]
 }
