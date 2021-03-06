@@ -199,9 +199,18 @@
       "id": 2
     },
     {
-      "address": "ggfgfg",
-      "complement": "cvghb hgggb",
+      "address": "Rua das bitch",
+      "number": "12",
+      "complement": "Casa Branca",
+      "formPagyment": "dinheiro",
       "id": 3
+    },
+    {
+      "address": "Rua do comercial",
+      "number": "22",
+      "complement": "Minha casa",
+      "formPagyment": "debito",
+      "id": 4
     }
   ]
 }
