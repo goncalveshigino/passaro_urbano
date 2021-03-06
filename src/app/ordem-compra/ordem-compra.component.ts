@@ -11,6 +11,8 @@ import { FormGroup,FormControl, Validators } from '@angular/forms'
 })
 export class OrdemCompraComponent implements OnInit {
 
+  public idPedidoCompra: number
+
   public formulario: FormGroup = new FormGroup({
     
     'address': new FormControl(null, [ Validators.required, Validators.minLength(3),Validators.maxLength(120)]),
@@ -26,6 +28,31 @@ export class OrdemCompraComponent implements OnInit {
   }
 
   public confirmarCompra(): void {
-    console.log(this.formulario)
+    if(this.formulario.status ==='INVALID'){
+
+      console.log('Formulario esta invalido')
+
+      this.formulario.get('address').markAsTouched()
+      this.formulario.get('number').markAsTouched()
+      this.formulario.get('complement').markAsTouched()
+      this.formulario.get('formPaygment').markAsTouched()
+    
+    }else {
+
+
+      let pedido: Pedido = new Pedido(
+        this.formulario.value.address,
+        this.formulario.value.number,
+        this.formulario.value.complement,
+        this.formulario.value.formPaygment
+      )
+
+      this.ordemCompraService.efetivarCompra(pedido)
+      .subscribe((idPedido: number) => {
+        this.idPedidoCompra = idPedido
+
+      })
+    
+    }
   }
 }
