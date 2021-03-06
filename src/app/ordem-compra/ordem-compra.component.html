@@ -95,13 +95,13 @@
             <option value="debito">Débito</option>
           </select>
                     <small *ngIf="formulario.get('formPaygment').valid && formulario.get('address').touched" class="form-text text-success">Ok</small>
-                    <small *ngIf="!formulario.get('formPaygment').valid && formulario.get('address').touched" class="form-text text-danger">Forma de pagamento inválido</small>
+                    <small *ngIf="!formulario.get('formPaygment').valid && formulario.get('address').touched" class="form-text text-danger">Forma de pagamento inválida</small>
 
                 </div>
             </div>
 
             <hr />
-            <button type="submit" class="btn btn-primary btn-lg">Cofirmar compra</button>
+            <button type="submit" class="btn btn-primary btn-lg" [disabled]="!formulario.valid">Cofirmar compra</button>
         </form>
     </div>
 </div>
