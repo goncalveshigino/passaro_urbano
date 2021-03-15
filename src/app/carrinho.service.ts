@@ -1,5 +1,10 @@
+import { ItemCarrinho } from './shared/item_carrinho.model'
 
-export default class CarrinhoService {
+
+class CarrinhoService {
+
+    public items: ItemCarrinho[] = []
 
 }
+export default CarrinhoService
 
